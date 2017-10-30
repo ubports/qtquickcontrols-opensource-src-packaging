@@ -1,0 +1,309 @@
+qtquickcontrols-opensource-src (5.9.1-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 16 Aug 2017 14:00:15 -0300
+
+qtquickcontrols-opensource-src (5.9.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build-dependencies to 5.9.1.
+  * Add build-dependency on qtdeclarative5-dev-tools, to get QML cache
+    files generated.
+  * Bump Standards-Version to 4.0.0, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 03 Jul 2017 16:24:38 +0300
+
+qtquickcontrols-opensource-src (5.9.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build-dependencies to 5.9.0.
+  * Add support for nodoc build profile.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 08 Jun 2017 22:44:53 +0300
+
+qtquickcontrols-opensource-src (5.7.1~20161021-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 01 Nov 2016 15:20:08 +0300
+
+qtquickcontrols-opensource-src (5.7.1~20161021-1) experimental; urgency=medium
+
+  * New upstream snapshot.
+    - Bump Qt build dependencies.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sun, 30 Oct 2016 09:40:00 -0300
+
+qtquickcontrols-opensource-src (5.7.0-3) experimental; urgency=medium
+
+  * Make tests non-fatal. We enabled test on the 5.7 round and discovered
+    that some of them where failing. As Dmitry Shachnev discovered this is no
+    regression from 5.6 and we need to get 5.7 into testing before the
+    transition freeze we are making them non-fatal.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sun, 30 Oct 2016 09:36:11 -0300
+
+qtquickcontrols-opensource-src (5.7.0-2) experimental; urgency=medium
+
+  * Run the tests with --no-parallel, otherwise qWaitForWindowActive() does
+    not work.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 12 Jul 2016 23:50:19 +0300
+
+qtquickcontrols-opensource-src (5.7.0-1) experimental; urgency=medium
+
+  [ Harald Sitter ]
+  * New upstream release.
+  * Remove package qml-module-qtquick-layouts (moved to qtdeclarative)
+  * qtquickcontrols5-examples no longer depends on the now moved layouts
+  * qml-module-qtquick-controls now depends on layouts without a version lock
+  * qml-module-qtquick-extras now depends on layouts without a version lock
+
+  [ Dmitry Shachnev ]
+  * Update debian/copyright.
+  * Bump Qt build-dependencies to 5.7.0.
+  * Drop obsolete Breaks/Replaces.
+  * Make the examples package depend on qml-module-qtquick-extras.
+  * Make qml-module-qtquick-controls depend on qml-module-qtgraphicaleffects.
+  * Add a patch to make the Dashboard example use packaged DejaVu Sans font
+    (packaged_dejavu_sans.diff).
+  * Run tests during build.
+    - Build with QT_BUILD_PARTS+=tests.
+    - Add build-dependencies on various QML modules and Xvfb.
+    - Disable one failing test, test_windowHeight2 (skip_failing_test.diff).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Tue, 12 Jul 2016 17:07:08 +0300
+
+qtquickcontrols-opensource-src (5.6.1-3) unstable; urgency=medium
+
+  * Backport fix_crash_on_exit.patch to solve a crash that affects among
+    others, kscreenlocker.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 20 Sep 2016 09:54:50 -0300
+
+qtquickcontrols-opensource-src (5.6.1-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 13 Jun 2016 11:05:08 -0300
+
+qtquickcontrols-opensource-src (5.6.1-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Update Qt build dependencies.
+  * Bump Standards-Version to 3.9.8, no changes required.
+  * Simplify qtquickcontrols5-examples.install, there is a common path for
+    all the examples.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 11 Jun 2016 22:40:28 -0300
+
+qtquickcontrols-opensource-src (5.6.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build-dependencies to 5.6.0.
+  * Drop unused pkg-kde-tools build-dependency.
+  * Use recommended https URIs for Vcs fields.
+  * Bump Standards-Version to 3.9.7, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 31 Mar 2016 20:46:08 +0200
+
+qtquickcontrols-opensource-src (5.5.1-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 21 Oct 2015 19:21:19 -0300
+
+qtquickcontrols-opensource-src (5.5.1-1) experimental; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Minor debian/copyright fixes.
+
+  [ Timo Jyrinki ]
+  * New upstream release. 
+  * Bump build dependencies.
+
+ -- Timo Jyrinki <timo-jyrinki@ubuntu.com>  Mon, 19 Oct 2015 10:42:58 +0000
+
+qtquickcontrols-opensource-src (5.5.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build-dependencies to 5.5.0.
+  * Add new qml-module-qtquick-extras binary package.
+  * Do not hardcode libqt5qml5 dependencies.
+  * Update debian/copyright.
+  * Avoid compiling code during arch-indep builds, by adding empty
+    override_dh_auto_test-indep target.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 29 Aug 2015 20:51:41 +0300
+
+qtquickcontrols-opensource-src (5.4.2-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 24 Jun 2015 16:20:42 -0300
+
+qtquickcontrols-opensource-src (5.4.2-1) experimental; urgency=medium
+
+  * New upstream release.
+    - Bump Qt build dependencies.
+  * Clear up the list in Uploaders removing people who hasn't committed to the
+    repo in more than a year. They can re add themselves whenever they want
+    (and we really hope to see you back really soon!).
+  * Expose HTML documentation (Closes: #751180).
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 03 Jun 2015 16:27:43 -0300
+
+qtquickcontrols-opensource-src (5.4.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Update debian/watch to use https://download.qt.io/.
+  * Bump Qt build-dependencies to 5.4.1.
+  * Add some additional dependencies to qtquickcontrols5-examples.
+  * Clean up debian/copyright.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Thu, 05 Mar 2015 11:31:56 +0300
+
+qtquickcontrols-opensource-src (5.4.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build-dependencies to 5.4.0.
+  * Update debian/copyright.
+  * Update Vcs-Browser field to point to cgit interface.
+  * Add myself to Uploaders.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 22 Dec 2014 15:21:14 +0300
+
+qtquickcontrols-opensource-src (5.3.2-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 22 Sep 2014 23:44:30 -0300
+
+qtquickcontrols-opensource-src (5.3.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build dependencies.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 18 Sep 2014 18:12:38 -0300
+
+qtquickcontrols-opensource-src (5.3.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop QML modules transitional packages, they are not needed anymore.
+  * Bump Qt build dependencies.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 01 Jul 2014 12:32:22 -0300
+
+qtquickcontrols-opensource-src (5.3.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Fri, 06 Jun 2014 15:34:02 -0300
+
+qtquickcontrols-opensource-src (5.3.0-1) experimental; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * New upstream release.
+  * Bump Qt build-dependencies.
+  * Add qml-module-qtquick-dialogs and qml-module-qtquick-privatewidgets
+    packages, moved here from qtdeclarative-opensource-src.
+  * Add indep build-dependencies on qtbase5-doc-html and
+    qtdeclarative5-doc-html, needed by the docs.
+  * Add new qtquickcontrols5-examples package, install examples.
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Update debian/copyright.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 26 May 2014 19:07:49 -0300
+
+qtquickcontrols-opensource-src (5.2.1-4) unstable; urgency=medium
+
+  * Add qtdeclarative5-window-plugin as a qtdeclarative5-controls-plugin
+    dependency.
+  * Rename QML packages with proper Break+Replaces and files renaming:
+    - qtdeclarative5-controls-plugin → qml-module-qtquick-controls.
+    - qtdeclarative5-quicklayouts-plugin → qml-module-qtquick-layouts.
+  * Add qml-module-qtquick2 as a qml-module-qtquick-controls dependency.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 03 Apr 2014 12:04:28 -0300
+
+qtquickcontrols-opensource-src (5.2.1-3) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 26 Mar 2014 08:20:29 -0300
+
+qtquickcontrols-opensource-src (5.2.1-2) experimental; urgency=medium
+
+  [ Dmitry Shachnev ]
+  * Build the documentation packages.
+  * Use canonical Vcs-Browser field.
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Remove rule to compress packages with xz, it's now the default.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 27 Feb 2014 23:48:39 -0300
+
+qtquickcontrols-opensource-src (5.2.1-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build dependencies.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sun, 16 Feb 2014 18:23:56 -0300
+
+qtquickcontrols-opensource-src (5.2.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+  * Update Standards-Version to 3.9.5, no changes required.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Fri, 31 Jan 2014 20:57:48 -0300
+
+qtquickcontrols-opensource-src (5.2.0-1) experimental; urgency=low
+
+  * New upstream release.
+  * Bump build dependencies, removing libqt5v8-5-private-dev which is no
+    longer used.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Fri, 13 Dec 2013 22:34:11 -0300
+
+qtquickcontrols-opensource-src (5.1.1-2) unstable; urgency=low
+
+  * Rename libqt5qml-quickcontrols to qtdeclarative5-controls-plugin to
+    maintain consistency with other packages.
+    - Create a dummy package libqt5qml-quickcontrols depending on
+      qtdeclarative5-controls-plugin.
+    - Add proper Breaks+Replaces to qtdeclarative5-controls-plugin.
+    - Rename .install and .lintian-override files.
+    - Make qtdeclarative5-quicklayouts-plugin depend on the new package.
+  * Fix the description of the layouts plugin package.
+  * The Controls module depends on the Layouts one. Swap the dependencies
+    (Closes: #725161).
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 24 Oct 2013 19:42:01 -0300
+
+qtquickcontrols-opensource-src (5.1.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Tighten Qt 5 build dependencies.
+  * Clean up some copyright stuff:
+    - Fix path to snippets under BSD-3-clause.
+  * Use years intervals in FSF's copyright for qquerytransformparser.cpp.
+  * Make qtdeclarative5-quicklayouts-plugin depend on libqt5qml-quickcontrols.
+    Thanks Scott Kitterman for pointing this out.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 03 Sep 2013 11:50:31 -0300
+
+qtquickcontrols-opensource-src (5.1.0-2) unstable; urgency=low
+
+  * Add missing copyright holder.
+  * Simplify debian/copyright.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Fri, 23 Aug 2013 15:43:02 -0300
+
+qtquickcontrols-opensource-src (5.1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #697509).
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 22 Aug 2013 19:40:27 -0300
