@@ -1,4 +1,40 @@
-qtquickcontrols-opensource-src (5.9.1+ubports) xenial; urgency=medium
+qtquickcontrols-opensource-src (5.9.5-0ubports1) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 14 Apr 2018 14:40:52 -0500
+
+qtquickcontrols-opensource-src (5.9.4-0ubuntu1) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sun, 25 Feb 2018 19:29:33 -0600
+
+qtquickcontrols-opensource-src (5.9.3-0ubuntu1) bionic; urgency=medium
+
+  * New upstream release.
+  * Bump build dependencies to Qt 5.9.3.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 13 Dec 2017 23:16:39 -0600
+
+qtquickcontrols-opensource-src (5.9.2-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Fri, 27 Oct 2017 11:16:53 +0300
+
+qtquickcontrols-opensource-src (5.9.2-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Qt build-dependencies to 5.9.2.
+  * Use dh_qmlcdeps to get proper dependencies for .qmlc files.
+  * Use debhelper compat level 10 and dh_missing.
+  * Stop using deprecated Priority: extra.
+  * Bump Standards-Version to 4.1.1.
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Mon, 23 Oct 2017 12:30:31 +0300
+
+qtquickcontrols-opensource-src (5.9.1-2) unstable; urgency=medium
 
   * Release to unstable.
 
